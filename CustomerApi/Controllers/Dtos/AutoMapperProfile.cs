@@ -21,13 +21,19 @@ public class AutoMapperProfile : Profile
             .ForMember(c => c.Id, opt => opt.Ignore());  // Ignore Id as it is not needed during creation
         CreateMap<OriginCreateDto, Origin>();
         CreateMap<AddressCreateDto, Address>();
-        CreateMap<TelephoneCreateDto, Telephone>();
+        CreateMap<TelephoneCreateDto, Telephone>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())  // Ignoring Id since it's likely set by the database
+            .ForMember(dest => dest.CustomerId, opt => opt.Ignore())  // Ignoring CustomerId if it's not part of the DTO
+            .ForMember(dest => dest.Customer, opt => opt.Ignore());  // Ignoring Customer object mapping;
 
         // Update DTO mappings
         CreateMap<CustomerUpdateDto, Customer>()
             .ForMember(c => c.Id, opt => opt.Ignore());  // Ignore Id to prevent updates
         CreateMap<OriginUpdateDto, Origin>();
         CreateMap<AddressUpdateDto, Address>();
-        CreateMap<TelephoneUpdateDto, Telephone>();
+        CreateMap<TelephoneUpdateDto, Telephone>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())  // Id should not be updated from DTO
+            .ForMember(dest => dest.CustomerId, opt => opt.Ignore())
+            .ForMember(dest => dest.Customer, opt => opt.Ignore());;
     }
 }
