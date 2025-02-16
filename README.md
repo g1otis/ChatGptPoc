@@ -4,6 +4,7 @@ Welcome to the Customer API project repository. This .NET 8 Web API is POC proje
 
 ## POC Branches
 - part1-scaffolding: related article link
+- part2-unit-testing: related article link
 
 ## Features
 
@@ -12,6 +13,7 @@ Welcome to the Customer API project repository. This .NET 8 Web API is POC proje
 - **DTOs (Data Transfer Objects)**: Facilitate the transmission of data across processes.
 - **Auto Migration**: Automates database migrations to ensure schema consistency.
 - **Docker Integration**: Containerizes the application for easy deployment and isolation.
+- **Unit Tests**: Unit tests available for mapping, endpoints and repository.
 
 ## Technologies
 
@@ -29,6 +31,15 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 - .NET 8 SDK
 - Docker Desktop
+
+### Changes Required
+
+- Update     <InvariantGlobalization>false</InvariantGlobalization> in .csproj to false => was not needed in the end
+https://github.com/dotnet/SqlClient/issues/2239
+- Update connection string to add the following `TrustServerCertificate=True;` 
+https://github.com/dotnet/SqlClient/issues/1479
+- Add env variable aspnetcore_environment=development in docker-compose.yml
+- No need to add the following package `dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection`
 
 ### Installation
 
