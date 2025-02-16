@@ -3,8 +3,11 @@
 Welcome to the Customer API project repository. This .NET 8 Web API is POC project designed using the chatGPT prompt to demonstrate how a developer could get benefit of using chatGPT, creating a project and making changes/improvements.
 
 ## POC Branches
-- part1-scaffolding: related article link
-- part2-unit-testing: related article link
+- part1-scaffolding: [related medium article link][medium_part1_scaffolding_link]
+- part2-unit-testing: [related medium article link][medium_part2_unit_testing_link]
+
+[medium_part1_scaffolding_link]: https://medium.com/@g1otis.dev/net-web-api-application-development-using-chatgpt-415625f322f5
+[medium_part2_unit_testing_link]: https://medium.com/@g1otis.dev/net-web-api-application-development-using-chatgpt-415625f322f5
 
 ## Features
 
